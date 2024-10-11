@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+export function getStaticPaths() {
+  return [
+      {params: {news: 'rover'}},
+      {params: {news: 'clifford'}},
+      {params: {news: 'spot'}},
+  ];
+}
+
+const { news } = Astro.params;
+---
+
+<Layout>
+    El titulo de la noticia es: {news}
+</Layout>
