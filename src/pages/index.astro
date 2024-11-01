@@ -1,9 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Bienvenidos a mi pagina">
 	Este es el Inico
-	<p>Hola</p>
+	<p class="pretty-p font-myfont">hola</p>
+	<Icon name="mdi:delete-outline" size="56" class='text-green-600' />
+	<Icon name="devicon:google" size="56"/>
 </Layout>
+
+<!-- clases personalizadas -->
+
+<style>
+	.pretty-p {
+		@apply bg-red-500 p-6 text-white rounded h-96;
+
+		clip-path: polygon(100% 0%, 0% 0% , 0.00% 45.55%, 3.33% 44.02%, 6.67% 42.23%, 10.00% 40.33%, 13.33% 38.48%, 16.67% 36.84%, 20.00% 35.55%, 23.33% 34.72%, 26.67% 34.42%, 30.00% 34.68%, 33.33% 35.47%, 36.67% 36.73%, 40.00% 38.35%, 43.33% 40.19%, 46.67% 42.10%, 50.00% 43.90%, 53.33% 45.46%, 56.67% 46.62%, 60.00% 47.31%, 63.33% 47.45%, 66.67% 47.03%, 70.00% 46.10%, 73.33% 44.72%, 76.67% 43.02%, 80.00% 41.15%, 83.33% 39.25%, 86.67% 37.51%, 90.00% 36.05%, 93.33% 35.01%, 96.67% 34.48%, 100.00% 34.50%);
+	}
+</style>
 
