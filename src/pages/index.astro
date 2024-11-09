@@ -8,6 +8,31 @@ import { Icon } from 'astro-icon/components';
 	<p class="pretty-p font-myfont">hola</p>
 	<Icon name="mdi:delete-outline" size="56" class='text-green-600' />
 	<Icon name="devicon:google" size="56"/>
+
+	<div id="btn">
+		Pinchame
+	</div>
+
+	<ul data-tabs class="flex bg-blue-500">
+		<li><a data-tabby-default href="#harry">Harry Potter</a></li>
+		<li><a href="#hermione">Hermione</a></li>
+		<li><a href="#neville">Neville</a></li>
+	</ul>
+	
+	<div id="harry">Harry dadasdasdasdasdasdadsdasd  dasda</div>
+	<div id="hermione">Hermione dadasdasdasdasdasdadsdasd  dasda</div>
+	<div id="neville">Neville dadasdasdasdasdasdadsdasd  dasda</div>
+
+
+	<div class="embla">
+		<div class="embla__container">
+		  <div class="embla__slide bg-red-400">Slide 1</div>
+		  <div class="embla__slide bg-orange-400">Slide 2</div>
+		  <div class="embla__slide bg-green-600">Slide 3</div>
+		</div>
+	</div>
+
+	<div class="h-20"></div>
 </Layout>
 
 <!-- clases personalizadas -->
@@ -18,5 +43,40 @@ import { Icon } from 'astro-icon/components';
 
 		clip-path: polygon(100% 0%, 0% 0% , 0.00% 45.55%, 3.33% 44.02%, 6.67% 42.23%, 10.00% 40.33%, 13.33% 38.48%, 16.67% 36.84%, 20.00% 35.55%, 23.33% 34.72%, 26.67% 34.42%, 30.00% 34.68%, 33.33% 35.47%, 36.67% 36.73%, 40.00% 38.35%, 43.33% 40.19%, 46.67% 42.10%, 50.00% 43.90%, 53.33% 45.46%, 56.67% 46.62%, 60.00% 47.31%, 63.33% 47.45%, 66.67% 47.03%, 70.00% 46.10%, 73.33% 44.72%, 76.67% 43.02%, 80.00% 41.15%, 83.33% 39.25%, 86.67% 37.51%, 90.00% 36.05%, 93.33% 35.01%, 96.67% 34.48%, 100.00% 34.50%);
 	}
+
+.embla {
+	@apply bg-blue-200 max-w-80; 
+  	overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
 </style>
 
+<script>
+	import Tabby from 'tabbyjs'
+	import JSConfetti from 'js-confetti'
+	import EmblaCarousel from 'embla-carousel'
+
+	const jsConfetti = new JSConfetti()
+
+
+	const divBtn = document.getElementById("btn") 
+	
+	divBtn.addEventListener("click", function(event) {
+		console.log("Me has pinchado", event.target.id)
+		jsConfetti.addConfetti()
+	})
+
+
+	const tabs = new Tabby('[data-tabs]');
+
+	const emblaNode = document.querySelector('.embla')
+	const options = { loop: false }
+	EmblaCarousel(emblaNode, options)
+	
+</script>
