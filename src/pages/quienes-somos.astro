@@ -1,10 +1,104 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Notification from "../components/vue/Notification.vue"
+import Calendario from "../components/calendario/calendario.astro"
 ---
 
 <Layout title="Conozcámonos">
     Esta es la sección quienes somos.
 
     <Notification client:load/>
+
+
+
+    <div class="bg-white h-96"></div>
+
+
+
+    <div class="bg-gray-300 w-auto h-[900px]">
+        <div class="flex items-center justify-center">
+            <h1 class="text-4xl font-bold text-white">CALENDARIO 2024</h1>
+        </div>
+
+        <div class="container flex gap-5 mx-auto pt-12">
+            <Calendario>
+
+                <h1 slot="mes">
+                    Enero
+                </h1>
+                <div slot="day" class="flex justify-between space-x-4">
+                    <div>29</div>
+                    <div>30</div>
+                    <div>31</div>
+                </div>
+            </Calendario>
+
+            <Calendario color>
+
+                <h1 slot="mes">
+                    Febrero
+                </h1>
+
+            </Calendario>
+
+            <Calendario>
+                <h1 slot="mes">
+                    Marzo
+                </h1>
+    
+            </Calendario>
+
+            <Calendario color>
+                <h1 slot="mes">
+                    Abril
+                </h1>
+    
+            </Calendario>
+
+            <Calendario>
+                <h1 slot="mes">
+                    Mayo
+                </h1>
+    
+            </Calendario>
+
+            <Calendario color>
+                <h1 slot="mes">
+                    Junio
+                </h1>
+    
+            </Calendario>
+
+        </div>
+
+        <div class="container flex gap-5 mx-auto pt-6">
+            <Calendario>
+    
+            </Calendario>
+
+            <Calendario color>
+    
+            </Calendario>
+
+            <Calendario>
+    
+            </Calendario>
+
+            <Calendario color>
+    
+            </Calendario>
+
+            <Calendario>
+    
+            </Calendario>
+
+            <Calendario color>
+    
+            </Calendario>
+
+        </div>
+
+
+    </div>
+
 </Layout>
